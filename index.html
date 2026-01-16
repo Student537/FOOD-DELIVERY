@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodExpress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>FoodExpress</h1>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+    <a href="#login">Login</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Fast & Fresh Food Delivery</h2>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="container">
+  <h2>Menu</h2>
+
+  <div class="food-list">
+
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>₹299</p>
+      <button onclick="addToCart('Pizza',299)">Add</button>
+    </div>
+
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burger">
+      <h3>Burger</h3>
+      <p>₹149</p>
+      <button onclick="addToCart('Burger',149)">Add</button>
+    </div>
+
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Biryani">
+      <h3>Biryani</h3>
+      <p>₹249</p>
+      <button onclick="addToCart('Biryani',249)">Add</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CART -->
+<section id="cart" class="container">
+  <h2>Cart</h2>
+  <ul id="cartItems"></ul>
+  <h3>Total: ₹<span id="total">0</span></h3>
+</section>
+
+<!-- CHECKOUT -->
+<section class="container">
+  <h2>Checkout</h2>
+  <form onsubmit="placeOrder(event)">
+    <input type="text" placeholder="Full Name" required>
+    <input type="text" placeholder="Address" required>
+    <input type="tel" placeholder="Mobile Number" required>
+    <select required>
+      <option value="">Payment Method</option>
+      <option>Cash on Delivery</option>
+      <option>UPI</option>
+    </select>
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="container">
+  <h2>Login</h2>
+  <form onsubmit="login(event)">
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 FoodExpress</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
